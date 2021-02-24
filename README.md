@@ -39,15 +39,21 @@ php artisan vendor:publish --provider=Sequelone\VkGeo\VkGeoServiceProvider
 ```
 php artisan migrate
 ```
+
+Добавьте роут в `routes/web.php`.
+```
+Route::get('/vkauth', [App\Http\Controllers\VkAccessTokenController::class, 'vkaccesstoken'])->name('vkaccesstoken');
+```
+
 В `.env` необходимо добавить, данные вашего vk приложения:
 ```
-VK_KEY=
-VK_SECRET=
-VK_REDIRECT_URI=
+VKONTAKTE_KEY={введите здесь ID Standalone-приложения}
+VKONTAKTE_SECRET={здесь защищённый ключ}
+VKONTAKTE_REDIRECT_URI={здесь ссылку на страницу https://mysite.com/vkauth}
 ```
 Также для выполнения импорта получить токен ([Где взять api токен?](https://github.com/atehnix/laravel-vk-requester#Где-взять-api-токен)) приложения и добавить в `.env`:
 ```
-VK_TOKEN=
+VKONTAKTE_TOKEN={после получения токена со страницы /vkauth скопируйте и вставьте его сюда}
 ```
 Либо переопределить токен в `config/vk-geo.php`.
 
@@ -97,7 +103,3 @@ class Controller
 }
 ```
 У каждой модели есть `title`, `id`, у городов есть `area` (район), также настроенны связи между моделями. При необходимости можете также переопределить их.
-
-
-## Лицензия
-[MIT](https://raw.github.com/sequelone/laravel-vk-geo/master/LICENSE)

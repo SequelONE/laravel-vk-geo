@@ -30,5 +30,7 @@ return [
     |
     */
 
-    'delay' => 350,
+    'delay' => 500000,
+    
+    'token' => env('VKONTAKTE_TOKEN', '')
 ];

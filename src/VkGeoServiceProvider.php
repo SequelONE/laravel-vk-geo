@@ -22,6 +22,8 @@ class VkGeoServiceProvider extends ServiceProvider
     {
         $this->publishes([__DIR__.'/../publish/config/vk-geo.php' => config_path('vk-geo.php')], 'config');
         $this->publishes([__DIR__.'/../publish/database/' => database_path('migrations')], 'database');
+		$this->publishes([__DIR__.'/../publish/resource/vkaccesstoken.blade.php' => config_path('vkaccesstoken.blade.php')], 'resource');
+		$this->publishes([__DIR__.'/../publish/controller/VkAccessTokenController.php' => app_path('Http/Controllers/VkAccessTokenController.php')]);
 
         $this->bootCommands();
     }
