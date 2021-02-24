@@ -1,0 +1,35 @@
+{
+    "name": "sequelone/laravel-vk-geo",
+    "description": "Parse countries, regions and cities from vk.com api",
+    "keywords": [
+        "laravel",
+        "php",
+        "queue",
+        "api",
+        "client",
+        "vk",
+        "vk.com",
+        "vkontakte",
+        "geo",
+        "cities",
+        "regions",
+        "countries"
+    ],
+    "require": {
+        "php": ">=7.2",
+        "laravel/framework": "~5.2.0|~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|^8.12",
+        "atehnix/vk-client": "^1.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrej Kopp",
+            "email": "admin@sequel.one"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sequelone\\VkGeo\\": "src/"
+        }
+    }
+}
